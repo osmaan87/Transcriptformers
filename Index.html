@@ -1,11 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Transcriptformers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcriptformers: Build Mega Man X in Code – Your Assembly Odyssey Awaits</title>
+    <style>
+        body { font-family: 'Courier New', monospace; background: #000; color: #0f0; margin: 0; padding: 0; overflow-x: hidden; }
+        header { background: linear-gradient(90deg, #00f, #0f0); padding: 2rem; text-align: center; }
+        h1 { font-size: 3em; margin: 0; text-shadow: 0 0 10px #0f0; }
+        .hero { padding: 2rem; text-align: center; max-width: 800px; margin: auto; }
+        .stages { max-width: 800px; margin: auto; padding: 1rem; }
+        .stage { border: 1px solid #0f0; margin: 1rem 0; padding: 1rem; cursor: pointer; background: #111; }
+        .stage h3 { margin: 0; color: #0f0; }
+        .stage-content { display: none; padding: 1rem; background: #222; }
+        .stage.open .stage-content { display: block; }
+        .demo { background: #000; padding: 1rem; border: 1px solid #333; font-size: 0.8em; white-space: pre; overflow: auto; }
+        .cta { text-align: center; padding: 2rem; background: #00f; color: #fff; }
+        .paywall { background: #f00; color: #fff; padding: 1rem; text-align: center; }
+        button { background: #0f0; color: #000; border: none; padding: 1rem 2rem; font-family: inherit; cursor: pointer; font-size: 1.2em; }
+        button:hover { background: #0a0; }
+        footer { text-align: center; padding: 1rem; background: #111; }
+        @media (max-width: 600px) { h1 { font-size: 2em; } .demo { font-size: 0.7em; } }
+    </style>
 </head>
 <body>
-  <h1>Welcome to Transcriptformers!</h1>
-  <p>Start your journey coding a Mega Man X style game, stage by stage.</p>
+    <header>
+        <h1>Transcriptformers</h1>
+        <p><em>Code Your Way Through Mega Man X: From Shell Dashes to Assembly Overload</em></p>
+    </header>
+
+    <section class="hero">
+        <h2>You're X. Code is Your Buster. Build the Game That Builds You.</h2>
+        <p>Transcriptformers isn't a tutorial—it's a recursive odyssey. Write shell scripts that morph your transcripts (logs/errors) into game features. Fail? The meta-layer heals: Pattern-match glitches, inject variants (LLM-style transformers stubbed in Python), and deploy via mock CI/CD. Free Phases 1-2: Awaken in terminal grids. Paid Unlock ($5): Forge Stage 3 in NASM—hand-assemble the boss engine.</p>
+        <p><strong>Cross-Platform Ready:</strong> Web, Desktop, Mobile. Run in browser (JS emu), terminal (Bash), or emu (DOSBox for asm). Built. Playable. Yours.</p>
+        <div class="demo" onclick="this.innerHTML = 'X .....\\n. . . . .\\n. . . . .\\n[Mock Grid: Move with WASD]';">Click for Stage 1 Demo</div>
+    </section>
+
+    <section class="stages">
+        <h2>Phased Transcripts: Unlock the Hunter Saga</h2>
+        <div class="stage" onclick="this.classList.toggle('open');">
+            <h3>Phase 1: Shell Awakening (Free – Stages 1-4)</h3>
+            <div class="stage-content">
+                <p>Terminal as battlefield. Code X's dash, jumps, and barriers. Transcripts log states; errors auto-heal with hints (e.g., bounds clip via regex transform).</p>
+                <ul>
+                    <li>Stage 1: Grid & Loops – Awaken in ASCII void.</li>
+                    <li>Stage 2: Input Hooks – Dash with non-blocking reads.</li>
+                    <li>Stage 3: Collision Nets – Static mavericks block paths.</li>
+                    <li>Stage 4: Physics Drop – Gravity pulls; heal overflows recursively.</li>
+                </ul>
+                <div class="demo">#!/bin/bash\nGRID_W=10\nfor ((x=0; x<GRID_W; x++)); do echo "X@Pos $x"; done  # Mock Loop: Your First Transcript</div>
+            </div>
+        </div>
+        <div class="stage" onclick="this.classList.toggle('open');">
+            <h3>Phase 2: Shell Sigma (Free – Stages 5-7)</h3>
+            <div class="stage-content">
+                <p>Compound your logs: Source Phase 1 transcripts for AI patrols. Mock CI/CD lints deploys; failed shots spawn alternate paths (sed-injected projectiles).</p>
+                <ul>
+                    <li>Stage 5: Maverick AI – Enemies patrol from your move history.</li>
+                    <li>Stage 6: Plasma Barrage – Arrays fire; heal syntax with pattern variants.</li>
+                    <li>Stage 7: Core Vitality – Health counters; recursive replays on death.</li>
+                </ul>
+                <div class="demo"># Source Stage1.log for enemy pos\necho "Patrol: $(grep 'Pos' Stage1.log | tail -1)"  # Transcript Morph: AI from Logs</div>
+            </div>
+        </div>
+        <div class="paywall stage" onclick="this.classList.toggle('open');">
+            <h3>Phase 3: Assembly X (Unlock $5 – Stage 8+)</h3>
+            <div class="stage-content">
+                <p>Hand-forge the engine: Shell transcripts compile to NASM stubs (e.g., movement → mov eax, [x_pos]). Heals transform bin errors into externs. Deploy to emu—beat the self-built boss.</p>
+                <ul>
+                    <li>Stage 8: Binary Buster – Flat asm for full loop; ZK-verify your code.</li>
+                    <li>+ Extras: Procedural remixes, shareable ROMs, X Mode badges.</li>
+                </ul>
+                <div class="demo">section .text\nglobal _start\n_start:\nmov eax, 0x58  ; 'X' awakens\nint 0x80  # Mock Asm: Your Final Transcript</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Awaken the Hunter</h2>
+        <p>Free Phases Now. Unlock Assembly Glory for $5 – Lifetime Access, No Subs.</p>
+        <form action="https://your-ko-fi-link-or-stripe.com" method="POST">  <!-- Swap your payment link -->
+            <button type="submit">Unlock Phase 3 – $5</button>
+        </form>
+        <p>Or wait for free drop if views hit 1K. Fork the repo, build your variant.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Transcriptformers | Built by a LACC Dropout | <a href="https://github.com/yourusername/transcriptformers">GitHub Repo</a> | <a href="meta_transformer.py">Peek Meta-Script</a></p>
+    </footer>
+
+    <script>
+        // JS for accordions (vanilla, no deps)
+        document.querySelectorAll('.stage').forEach(stage => {
+            stage.addEventListener('click', () => stage.classList.toggle('open'));
+        });
+        // Mock demo interop: Expand for real shell emu (xterm.js later)
+        document.querySelector('.demo').addEventListener('click', function() {
+            this.style.background = '#0f0';
+            setTimeout(() => { this.innerHTML = 'X . . . . . . . . .\\n. . . . . . . . . .\\n[Healed: Bounds Clamped]'; }, 500);
+        });
+    </script>
 </body>
 </html>
