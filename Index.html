@@ -22,6 +22,7 @@
         button { background: #0f0; color: #000; border: none; padding: 1rem 2rem; font-family: inherit; cursor: pointer; font-size: 1.2em; }
         button:hover { background: #0a0; }
         footer { text-align: center; padding: 1rem; background: #111; }
+        a { color: #0af; }
         @media (max-width: 600px) { h1 { font-size: 2em; } .demo { font-size: 0.7em; } }
     </style>
 </head>
@@ -35,17 +36,17 @@
         <h2>You're X. Code is Your Buster. Build the Game That Builds You.</h2>
         <p>Transcriptformers isn't a tutorial—it's a recursive odyssey. Write shell scripts that morph your transcripts (logs/errors) into game features. Fail? The meta-layer heals: Pattern-match glitches, inject variants (LLM-style transformers stubbed in Python), and deploy via mock CI/CD. Free Phases 1-2: Awaken in terminal grids. Paid Unlock ($5): Forge Stage 3 in NASM—hand-assemble the boss engine.</p>
         <p><strong>Cross-Platform Ready:</strong> Web, Desktop, Mobile. Run in browser (JS emu), terminal (Bash), or emu (DOSBox for asm). Built. Playable. Yours.</p>
-        <div class="demo" onclick="this.innerHTML = 'X .....\\n. . . . .\\n. . . . .\\n[Mock Grid: Move with WASD]';">Click for Stage 1 Demo</div>
+        <div class="demo">Click for Stage 1 Demo</div>
     </section>
 
     <section class="stages">
         <h2>Phased Transcripts: Unlock the Hunter Saga</h2>
-        <div class="stage" onclick="this.classList.toggle('open');">
+        <div class="stage">
             <h3>Phase 1: Shell Awakening (Free – Stages 1-4)</h3>
             <div class="stage-content">
                 <p>Terminal as battlefield. Code X's dash, jumps, and barriers. Transcripts log states; errors auto-heal with hints (e.g., bounds clip via regex transform).</p>
                 <ul>
-                    <li>Stage 1: Grid & Loops – Awaken in ASCII void.</li>
+                    <li><a href="demos/stage_1.html">Stage 1: Grid & Loops – Awaken in ASCII void.</a></li>
                     <li>Stage 2: Input Hooks – Dash with non-blocking reads.</li>
                     <li>Stage 3: Collision Nets – Static mavericks block paths.</li>
                     <li>Stage 4: Physics Drop – Gravity pulls; heal overflows recursively.</li>
@@ -53,7 +54,7 @@
                 <div class="demo">#!/bin/bash\nGRID_W=10\nfor ((x=0; x<GRID_W; x++)); do echo "X@Pos $x"; done  # Mock Loop: Your First Transcript</div>
             </div>
         </div>
-        <div class="stage" onclick="this.classList.toggle('open');">
+        <div class="stage">
             <h3>Phase 2: Shell Sigma (Free – Stages 5-7)</h3>
             <div class="stage-content">
                 <p>Compound your logs: Source Phase 1 transcripts for AI patrols. Mock CI/CD lints deploys; failed shots spawn alternate paths (sed-injected projectiles).</p>
@@ -65,7 +66,7 @@
                 <div class="demo"># Source Stage1.log for enemy pos\necho "Patrol: $(grep 'Pos' Stage1.log | tail -1)"  # Transcript Morph: AI from Logs</div>
             </div>
         </div>
-        <div class="paywall stage" onclick="this.classList.toggle('open');">
+        <div class="paywall stage">
             <h3>Phase 3: Assembly X (Unlock $5 – Stage 8+)</h3>
             <div class="stage-content">
                 <p>Hand-forge the engine: Shell transcripts compile to NASM stubs (e.g., movement → mov eax, [x_pos]). Heals transform bin errors into externs. Deploy to emu—beat the self-built boss.</p>
@@ -88,7 +89,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Transcriptformers | Built by a LACC Dropout | <a href="https://github.com/yourusername/transcriptformers">GitHub Repo</a> | <a href="meta_transformer.py">Peek Meta-Script</a></p>
+        <p>&copy; 2025 Transcriptformers | Built by a LACC Dropout | <a href="https://github.com/osmaan87/Transcriptformers">GitHub Repo</a> | <a href="meta_transformer.py">Peek Meta-Script</a></p>
     </footer>
 
     <script>
@@ -96,10 +97,14 @@
         document.querySelectorAll('.stage').forEach(stage => {
             stage.addEventListener('click', () => stage.classList.toggle('open'));
         });
+        // Fix literal \n in static demo code blocks
+        document.querySelectorAll('.stage-content .demo').forEach(d => {
+            d.textContent = d.textContent.replace(/\\n/g, '\n');
+        });
         // Mock demo interop: Expand for real shell emu (xterm.js later)
         document.querySelector('.demo').addEventListener('click', function() {
             this.style.background = '#0f0';
-            setTimeout(() => { this.innerHTML = 'X . . . . . . . . .\\n. . . . . . . . . .\\n[Healed: Bounds Clamped]'; }, 500);
+            setTimeout(() => { this.innerHTML = 'X . . . . . . . . .\n. . . . . . . . . .\n[Healed: Bounds Clamped]'; }, 500);
         });
     </script>
 </body>

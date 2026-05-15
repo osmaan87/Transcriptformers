@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1: Shell Awakening – Transcriptformers</title>
+    <style>
+        body { font-family: 'Courier New', monospace; background: #000; color: #0f0; margin: 0; padding: 2rem; }
+        h1 { color: #0f0; text-shadow: 0 0 10px #0f0; }
+        h2 { color: #0af; }
+        pre { background: #111; border: 1px solid #0f0; padding: 1rem; overflow-x: auto; }
+        .challenge { border: 1px solid #0f0; margin: 1rem 0; padding: 1rem; background: #111; }
+        .challenge h3 { margin-top: 0; color: #ff0; }
+        a { color: #0af; }
+        .back { display: inline-block; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <a class="back" href="../Index.html">← Back to Transcriptformers</a>
+    <h1>Stage 1: Shell Awakening</h1>
+    <p><em>Phase 1 (Free) — Awaken X in the terminal grid.</em></p>
 
+    <h2>Objective</h2>
+    <p>Write a Bash script that renders a 10×5 ASCII grid and places the player character <strong>X</strong> at position (0, 0). This is your first transcript — the starting state that all future stages build upon.</p>
+
+    <h2>Concepts Covered</h2>
+    <ul>
+        <li>Variables and arithmetic in Bash</li>
+        <li>Nested <code>for</code> loops</li>
+        <li>String construction and <code>echo</code> output</li>
+    </ul>
+
+    <div class="challenge">
+        <h3>Challenge: Draw the Grid</h3>
+        <p>Fill in the script below so that it prints a 10-column × 5-row grid. Place <code>X</code> at row 0, column 0; all other cells should show <code>.</code>.</p>
+        <pre>#!/bin/bash
+GRID_W=10
+GRID_H=5
+PLAYER_X=0
+PLAYER_Y=0
+
+for ((row=0; row&lt;GRID_H; row++)); do
+    line=""
+    for ((col=0; col&lt;GRID_W; col++)); do
+        if [[ $row -eq $PLAYER_Y &amp;&amp; $col -eq $PLAYER_X ]]; then
+            line+="X "
+        else
+            line+=". "
+        fi
+    done
+    echo "$line"
+done</pre>
+        <p><strong>Expected output:</strong></p>
+        <pre>X . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .</pre>
+    </div>
+
+    <h2>Transcript Log</h2>
+    <p>Run the script and save its output as <code>Stage1.log</code> — later stages will source this transcript to build enemy patrol paths and more.</p>
+    <pre>bash stage1.sh | tee Stage1.log</pre>
+
+    <h2>Next Up</h2>
+    <p><a href="../Index.html">← Return to the main page</a> and unlock <strong>Phase 1 Stage 2: Input Hooks</strong>.</p>
+</body>
+</html>
